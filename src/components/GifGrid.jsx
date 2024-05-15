@@ -1,3 +1,4 @@
+import {PropTypes} from 'prop-types'
 import GifItem from './GifItem';
 import { useFetchGifs } from '../hooks/useFetchGifs';
 
@@ -34,6 +35,12 @@ export const GifGrid = ({category}) => {
        </>
    )
 }
+
+
+GifGrid.propTypes = {
+   category : PropTypes.string.isRequired,
+}
+
 
 //{...image} we send the object divided by items as prop
 // In jsx we have to use className instead of class, because class it's already a reserved word

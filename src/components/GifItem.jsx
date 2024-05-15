@@ -1,5 +1,6 @@
 
-import React from 'react'
+import PropTypes from 'prop-types';
+
 
 export default function GifItem({title, url}) {
 
@@ -10,3 +11,12 @@ export default function GifItem({title, url}) {
     </div>
   )
 }
+
+
+// To force type's of properties
+GifItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  url  :  PropTypes.string.isRequired
+}
+
+

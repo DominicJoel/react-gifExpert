@@ -1,9 +1,10 @@
 import { useState } from "react";
+import PropTypes from 'prop-types'
 
 export const AddCategory = ({onNewCategory}) => {
 
   
-   const [input, setInput] = useState('One push');
+   const [input, setInput] = useState('');
    const onInputChange = ( {target}) => {
        //Asi el valor del imput cambia y se almacena en el estadp
        setInput(target.value);
@@ -22,7 +23,7 @@ export const AddCategory = ({onNewCategory}) => {
 
     return (
         // In this case form is only elemet being returned
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} aria-label="form">
         <input
          type="text"
          placeholder="Buscar gifs"
@@ -32,4 +33,9 @@ export const AddCategory = ({onNewCategory}) => {
         </form>
 
     )
+}
+
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired
 }
